@@ -1,4 +1,4 @@
-build-all: build-alpine build-httpd ;
+build-all: build-alpine build-httpd build-ruby;
 
 build-alpine:
 	docker build -t $(DOCKERHUB_USER)/alpine:3.5 alpine
@@ -6,3 +6,7 @@ build-alpine:
 
 build-httpd:
 	docker build -t $(DOCKERHUB_USER)/httpd:latest httpd
+
+build-ruby:
+	docker build -t $(DOCKERHUB_USER)/ruby:2.3 ruby
+	docker tag $(DOCKERHUB_USER)/ruby:2.3 $(DOCKERHUB_USER)/ruby:latest
