@@ -1,6 +1,6 @@
 # Ruby
 
-Light ruby image with rubygems, bundler, and compilation helper scripts.
+Ruby 2.3 image with rubygems, irb, and bundler.
 
 ## Usage
 
@@ -10,7 +10,7 @@ docker run --rm -it dhumphreys88/ruby:2.3 irb
 
 ## Ports
 
-- __8311__ - Simple health check through TCP connection
+- __8311__: Netcat health check
 
 ## Extension
 

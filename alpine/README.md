@@ -1,6 +1,6 @@
 # Alpine Linux
 
-Lightweight base image that reaps child processes and exposes a simple TCP health check.
+Lightweight base image that reaps child processes and exposes simple TCP health check.
 
 ## Usage
 
@@ -10,7 +10,7 @@ docker run --rm -it dhumphreys88/alpine:3.5 [command] [args]
 
 ## Ports
 
-- __8311__ - Simple health check through TCP connection
+- __8311__: Netcat health check
 
 ## Extension
 
