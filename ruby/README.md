@@ -5,7 +5,7 @@ Light ruby image with rubygems, bundler, and compilation helper scripts.
 ## Usage
 
 ```bash
-docker run --rm -it dhumphreys88/ruby:2.3 ruby -e 'puts "hello world"'
+docker run --rm -it dhumphreys88/ruby:2.3 irb
 ```
 
 ## Ports
