@@ -15,4 +15,4 @@ docker run -d -p 8080:8080 -v $(pwd):/var/lib/www dhumphreys88/httpd:latest
 
 ## Volumes
 
-- __/var/lib/www_: Web root
+- __/var/lib/www__: Web root

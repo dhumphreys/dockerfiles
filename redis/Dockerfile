@@ -4,14 +4,10 @@ FROM dhumphreys88/alpine:3.5
 USER root
 RUN set -xe \
 
-  # add new user and group for redis
-  && addgroup -S redis \
-  && adduser -S -G redis redis \
-
   # install redis server
   && apk add --no-cache redis \
 
-  # create a redis data directory
+  # create redis data directory
   && mkdir -p /var/lib/redis \
   && chown redis:redis /var/lib/redis
 

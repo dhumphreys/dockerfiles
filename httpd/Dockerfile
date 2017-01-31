@@ -4,14 +4,14 @@ FROM dhumphreys88/alpine:3.5
 USER root
 
 # create a web root directory as a volume
-RUN mkdir -p /var/www
-COPY index.html /var/www/
-VOLUME /var/www
-WORKDIR /var/www
+RUN mkdir -p /var/lib/www
+COPY index.html /var/lib/www/
+VOLUME /var/lib/www
+WORKDIR /var/lib/www
 
 # default to running httpd command
 EXPOSE 8080
-CMD ["httpd", "-fvv", "-p", "8080", "-h", "/var/www"]
+CMD ["httpd", "-fvv", "-p", "8080"]
 
 # run containers as nobody for security purposes
 USER nobody

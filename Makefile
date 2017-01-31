@@ -1,4 +1,4 @@
-build-all: build-alpine build-httpd build-ruby;
+build-all: build-alpine build-httpd build-redis build-ruby;
 
 build-alpine:
 	docker build -t $(DOCKERHUB_USER)/alpine:3.5 alpine
