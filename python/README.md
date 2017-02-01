@@ -13,7 +13,7 @@ docker run --rm -it dhumphreys88/python:3 [python3]
 
 - __8311__: Netcat health check
 
-## Django App
+## Example
 
 ```dockerfile
 FROM dhumphreys88/python:3

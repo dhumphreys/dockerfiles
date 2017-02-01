@@ -5,14 +5,14 @@ Ruby 2.3 image with rubygems, irb, and bundler.
 ## Usage
 
 ```bash
-docker run --rm -it dhumphreys88/ruby:2.3 irb
+docker run --rm -it dhumphreys88/ruby:2.3 [irb]
 ```
 
 ## Ports
 
 - __8311__: Netcat health check
 
-## Rails App
+## Example
 
 ```dockerfile
 FROM dhumphreys88/ruby:2.3
