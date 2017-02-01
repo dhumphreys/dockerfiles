@@ -5,10 +5,13 @@ RUN apk add --no-cache netcat-openbsd tini
 
 # add check script to expose external TCP health checks
 EXPOSE 8311
-COPY tcp_health /usr/local/bin/
+COPY healthcheck-entrypoint.sh /usr/local/bin/
 
 # wrap all commands in tini and healthcheck executables
-ENTRYPOINT ["/sbin/tini", "--", "tcp_health"]
+ENTRYPOINT ["/sbin/tini", "--", "healthcheck-entrypoint.sh"]
+
+# run interactive shell by default
+CMD ["sh"]
 
 # run containers as guest user to be safe
 USER guest
