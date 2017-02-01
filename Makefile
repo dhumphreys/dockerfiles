@@ -1,7 +1,7 @@
 DOCKERHUB_USER := dhumphreys88
 
-build-all: build-alpine build-httpd build-redis build-ruby ;
-push-all: push-alpine push-httpd push-redis push-ruby ;
+build-all: build-alpine build-httpd build-python build-redis build-ruby ;
+push-all: push-alpine push-httpd push-python push-redis push-ruby ;
 
 build-alpine:
 	docker build -t $(DOCKERHUB_USER)/alpine:3.5 alpine
@@ -9,6 +9,11 @@ build-alpine:
 
 build-httpd:
 	docker build -t $(DOCKERHUB_USER)/httpd:latest httpd
+
+build-python:
+	docker build -t $(DOCKERHUB_USER)/python:2 python/2
+	docker build -t $(DOCKERHUB_USER)/python:3 python/3
+	docker tag $(DOCKERHUB_USER)/python:3 $(DOCKERHUB_USER)/python:latest
 
 build-redis:
 	docker build -t $(DOCKERHUB_USER)/redis:3.2 redis
@@ -24,6 +29,11 @@ push-alpine:
 
 push-httpd:
 	docker push $(DOCKERHUB_USER)/httpd:latest
+
+push-python:
+	docker push $(DOCKERHUB_USER)/python:2
+	docker push $(DOCKERHUB_USER)/python:3
+	docker push $(DOCKERHUB_USER)/python:latest
 
 push-redis:
 	docker push $(DOCKERHUB_USER)/redis:3.2
