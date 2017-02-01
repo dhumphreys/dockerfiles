@@ -17,7 +17,6 @@ docker run --rm -it dhumphreys88/alpine:3.5 [command] [args]
 ```dockerfile
 FROM dhumphreys88/alpine:3.5
 
-USER root
 RUN apk add --no-cache package1 package2 package3
 
 EXPOSE 1234

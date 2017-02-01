@@ -1,7 +1,4 @@
 FROM dhumphreys88/alpine:3.5
-
-# switch to root user for more permissions
-USER root
 RUN set -xe \
 
   # configure rubygems to skip documentation
@@ -19,6 +16,3 @@ WORKDIR /var/lib/ruby
 
 # execute interactive ruby terminal by default
 CMD ["irb"]
-
-# run containers as nobody for security purposes
-USER nobody

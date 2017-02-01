@@ -1,7 +1,4 @@
 FROM dhumphreys88/alpine:3.5
-
-# switch to root user for more permissions
-USER root
 RUN set -xe \
 
   # install redis server
@@ -22,5 +19,5 @@ COPY redis.conf /etc/redis.conf
 EXPOSE 6379
 CMD ["redis-server", "/etc/redis.conf"]
 
-# run containers as redis for security purposes
+# run as non-root user
 USER redis

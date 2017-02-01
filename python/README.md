@@ -18,7 +18,6 @@ docker run --rm -it dhumphreys88/python:3 [python3]
 ```dockerfile
 FROM dhumphreys88/python:3
 
-USER root
 COPY requirements.txt /var/lib/python/
 RUN pip install -r requirements.txt
 COPY . /var/lib/python/

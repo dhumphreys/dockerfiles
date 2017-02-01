@@ -1,7 +1,4 @@
 FROM dhumphreys88/alpine:3.5
-
-# switch to root user for more permissions
-USER root
 RUN set -xe \
 
   # install python 3
@@ -21,6 +18,3 @@ WORKDIR /var/lib/python
 
 # execute interactive python terminal by default
 CMD ["python"]
-
-# run containers as nobody for security purposes
-USER nobody

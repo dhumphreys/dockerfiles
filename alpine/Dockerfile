@@ -12,6 +12,3 @@ ENTRYPOINT ["/sbin/tini", "--", "healthcheck-entrypoint.sh"]
 
 # run interactive shell by default
 CMD ["sh"]
-
-# run containers as guest user to be safe
-USER guest

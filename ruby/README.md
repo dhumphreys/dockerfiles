@@ -17,7 +17,6 @@ docker run --rm -it dhumphreys88/ruby:2.3 irb
 ```dockerfile
 FROM dhumphreys88/ruby:2.3
 
-USER root
 COPY Gemfile* /var/lib/ruby/
 RUN bundle install
 COPY . /var/lib/ruby/
