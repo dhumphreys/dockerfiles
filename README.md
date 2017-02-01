@@ -26,3 +26,4 @@ make build-ruby
 - [x] python
 - [x] redis
 - [x] ruby
+- [ ] snort
