@@ -1,4 +1,4 @@
-# Ruby
+# Python
 
 Python 2 and 3 images with pip package manager.
 
@@ -13,17 +13,18 @@ docker run --rm -it dhumphreys88/python:3 [python3]
 
 - __8311__: Netcat health check
 
-## Extension
+## Django App
 
 ```dockerfile
 FROM dhumphreys88/python:3
 
+# install packages and source code
 COPY requirements.txt /var/lib/python/
 RUN pip install -r requirements.txt
 COPY . /var/lib/python/
 
-EXPOSE 1234
-CMD ["python3", "script.py", "arg1", "arg2"]
-
+# set port and default command
+EXPOSE 8080
+CMD ["python3", "myapp.py", "0.0.0.0:8080"]
 USER nobody
 ```

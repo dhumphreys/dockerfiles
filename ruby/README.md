@@ -12,17 +12,18 @@ docker run --rm -it dhumphreys88/ruby:2.3 irb
 
 - __8311__: Netcat health check
 
-## Extension
+## Rails App
 
 ```dockerfile
 FROM dhumphreys88/ruby:2.3
 
+# install gems and source code
 COPY Gemfile* /var/lib/ruby/
 RUN bundle install
 COPY . /var/lib/ruby/
 
-EXPOSE 1234
-CMD ["bundle", "exec", "command", "arg1", "arg2"]
-
+# set port and default command
+EXPOSE 8080
+CMD ["bundle", "exec", "unicorn", "-p", "8080"]
 USER nobody
 ```

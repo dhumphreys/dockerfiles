@@ -23,5 +23,6 @@ make build-ruby
 
 - [x] alpine
 - [x] http
+- [x] python
 - [x] redis
 - [x] ruby
