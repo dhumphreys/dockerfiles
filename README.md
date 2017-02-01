@@ -2,24 +2,17 @@
 
 Collection of Alpine Linux-based Dockerfiles.
 
-## Instructions
-
-### Dependencies
-
-- docker
-- make
-
-### Building
+## Building
 
 ```bash
-# build everything
+# everything
 make build-all
 
-# build specific image
+# specific image
 make build-ruby
 ```
 
-## Dockerfile List
+## List
 
 - [x] alpine
 - [x] http
