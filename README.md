@@ -15,6 +15,7 @@ make build-ruby
 ## List
 
 - [x] alpine
+- [x] elixir
 - [x] http
 - [x] python
 - [x] redis
