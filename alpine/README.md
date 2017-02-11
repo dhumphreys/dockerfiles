@@ -12,7 +12,7 @@ docker run --rm -it dhumphreys88/alpine:3.5 [sh]
 
 - __8311__: Netcat health check
 
-## Example
+## Dockerfile
 
 ```dockerfile
 FROM dhumphreys88/alpine:3.5

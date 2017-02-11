@@ -12,7 +12,7 @@ docker run --rm -it dhumphreys88/ruby:2.3 [irb]
 
 - __8311__: Netcat health check
 
-## Example
+## Dockerfile
 
 ```dockerfile
 FROM dhumphreys88/ruby:2.3

@@ -6,15 +6,18 @@ A tool for managing secrets.
 
 ```bash
 docker run -d -p 8200:8200 dhumphreys88/vault:0.6
-docker run -d -p 8200:8200 --env VAULT_ROOT_TOKEN=0fc09d0e-6e42-27a8-f96b-0a8aa5f0e3ff dhumphreys88/vault:0.6
 ```
+
+## Environment
+
+- __VAULT_ROOT_TOKEN__ - Root token for local testing.
 
 ## Ports
 
 - __8200__: Vault server
 - __8311__: Netcat health check
 
-## Example
+## Dockerfile
 
 ```dockerfile
 FROM dhumphreys88/vault:0.6

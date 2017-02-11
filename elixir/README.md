@@ -12,7 +12,7 @@ docker run --rm -it dhumphreys88/elixir:1.3 [iex]
 
 - __8311__: Netcat health check
 
-## Example
+## Dockerfile
 
 ```dockerfile
 FROM dhumphreys88/elixir:2.3
