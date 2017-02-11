@@ -21,3 +21,4 @@ make build-ruby
 - [x] redis
 - [x] ruby
 - [ ] snort
+- [x] vault

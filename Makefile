@@ -1,7 +1,7 @@
 DOCKERHUB_USER := dhumphreys88
 
-build-all: build-alpine build-elixir build-httpd build-python build-redis build-ruby ;
-push-all: push-alpine push-elixir push-httpd push-python push-redis push-ruby ;
+build-all: build-alpine build-elixir build-httpd build-python build-redis build-ruby build-vault ;
+push-all: push-alpine push-elixir push-httpd push-python push-redis push-ruby push-vault ;
 
 build-alpine:
 	docker build -t $(DOCKERHUB_USER)/alpine:3.5 alpine
@@ -27,6 +27,10 @@ build-ruby:
 	docker build -t $(DOCKERHUB_USER)/ruby:2.3 ruby
 	docker tag $(DOCKERHUB_USER)/ruby:2.3 $(DOCKERHUB_USER)/ruby:latest
 
+build-vault:
+	docker build -t $(DOCKERHUB_USER)/vault:0.6 vault
+	docker tag $(DOCKERHUB_USER)/vault:0.6 $(DOCKERHUB_USER)/vault:latest
+
 push-alpine:
 	docker push $(DOCKERHUB_USER)/alpine:3.5
 	docker push $(DOCKERHUB_USER)/alpine:latest
@@ -50,3 +54,7 @@ push-redis:
 push-ruby:
 	docker push $(DOCKERHUB_USER)/ruby:2.3
 	docker push $(DOCKERHUB_USER)/ruby:latest
+
+push-vault:
+	docker push $(DOCKERHUB_USER)/vault:0.6
+	docker push $(DOCKERHUB_USER)/vault:latest
