@@ -1,7 +1,7 @@
 DOCKERHUB_USER := dhumphreys88
 
-build-all: build-alpine build-elixir build-httpd build-python build-redis build-ruby build-vault ;
-push-all: push-alpine push-elixir push-httpd push-python push-redis push-ruby push-vault ;
+build-all: build-alpine build-elixir build-httpd build-python build-rabbitmq build-redis build-ruby build-vault ;
+push-all: push-alpine push-elixir push-httpd push-python push-rabbitmq push-redis push-ruby push-vault ;
 
 build-alpine:
 	docker build -t $(DOCKERHUB_USER)/alpine:3.5 alpine
@@ -18,6 +18,10 @@ build-python:
 	docker build -t $(DOCKERHUB_USER)/python:2 python/2
 	docker build -t $(DOCKERHUB_USER)/python:3 python/3
 	docker tag $(DOCKERHUB_USER)/python:3 $(DOCKERHUB_USER)/python:latest
+
+build-rabbitmq:
+	docker build -t $(DOCKERHUB_USER)/rabbitmq:3.6 rabbitmq
+	docker tag $(DOCKERHUB_USER)/rabbitmq:3.6 $(DOCKERHUB_USER)/rabbitmq:latest
 
 build-redis:
 	docker build -t $(DOCKERHUB_USER)/redis:3.2 redis
@@ -46,6 +50,10 @@ push-python:
 	docker push $(DOCKERHUB_USER)/python:2
 	docker push $(DOCKERHUB_USER)/python:3
 	docker push $(DOCKERHUB_USER)/python:latest
+
+push-rabbitmq:
+	docker push $(DOCKERHUB_USER)/rabbitmq:3.6
+	docker push $(DOCKERHUB_USER)/rabbitmq:latest
 
 push-redis:
 	docker push $(DOCKERHUB_USER)/redis:3.2
