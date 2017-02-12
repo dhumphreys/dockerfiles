@@ -1,6 +1,6 @@
 # Ruby
 
-Ruby 2.3 image with rubygems, irb, and bundler.
+Ruby 2.3 with rubygems, bundler, and irb.
 
 ## Usage
 
@@ -10,7 +10,11 @@ docker run --rm -it dhumphreys88/ruby:2.3 [irb]
 
 ## Ports
 
-- __8311__: Netcat health check
+- __8311__: TCP healthcheck (see [alpine](../alpine/))
+
+## Volumes
+
+- __/opt/ruby__: Ruby application code
 
 ## Dockerfile
 
@@ -18,12 +22,11 @@ docker run --rm -it dhumphreys88/ruby:2.3 [irb]
 FROM dhumphreys88/ruby:2.3
 
 # install gems and source code
-COPY Gemfile* /var/lib/ruby/
+COPY Gemfile* /opt/ruby/
 RUN bundle install
-COPY . /var/lib/ruby/
+COPY . /opt/ruby/
 
 # set port and default command
 EXPOSE 8080
 CMD ["bundle", "exec", "unicorn", "-p", "8080"]
-USER nobody
 ```

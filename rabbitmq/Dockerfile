@@ -3,7 +3,8 @@ FROM dhumphreys88/alpine:3.5
 # rabbitmq version and configuration
 ENV \
   RABBITMQ_VERSION=3.6.6 \
-  RABBITMQ_HOME=/opt/rabbitmq
+  RABBITMQ_HOME=/opt/rabbitmq \
+  RUN_AS=rabbitmq
 
 RUN set -xe \
 
@@ -43,6 +44,3 @@ RUN set -xe \
 # default to running rabbitmq server
 EXPOSE 5672
 CMD ["/opt/rabbitmq/sbin/rabbitmq-server"]
-
-# run as non-root user
-USER rabbitmq

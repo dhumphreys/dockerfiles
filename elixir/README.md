@@ -10,7 +10,11 @@ docker run --rm -it dhumphreys88/elixir:1.3 [iex]
 
 ## Ports
 
-- __8311__: Netcat health check
+- __8311__: TCP healthcheck (see [alpine](../alpine/))
+
+## Volumes
+
+- __/opt/elixir__: Elixir application code
 
 ## Dockerfile
 
@@ -18,12 +22,11 @@ docker run --rm -it dhumphreys88/elixir:1.3 [iex]
 FROM dhumphreys88/elixir:2.3
 
 # install packages and source code
-COPY mix.exs mix.lock /var/lib/elixir/
+COPY mix.exs mix.lock /opt/elixir/
 RUN mix deps.get
-COPY . /var/lib/elixir/
+COPY . /opt/elixir/
 
 # set port and default command
 EXPOSE 1234
 CMD ["elixir", "script.exs"]
-USER nobody
 ```

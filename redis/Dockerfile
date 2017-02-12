@@ -1,4 +1,8 @@
 FROM dhumphreys88/alpine:3.5
+
+# run as non-root user
+ENV RUN_AS redis
+
 RUN set -xe \
 
   # install redis server
@@ -18,6 +22,3 @@ COPY redis.conf /etc/redis.conf
 # run redis server on port 6379
 EXPOSE 6379
 CMD ["redis-server", "/etc/redis.conf"]
-
-# run as non-root user
-USER redis
