@@ -15,7 +15,7 @@ docker run -d -p 8200:8200 dhumphreys88/vault:0.6
 ## Ports
 
 - __8200__: Vault server
-- __8311__: TCP healthcheck (see [vault](../alpine/))
+- __8311__: TCP healthcheck (see [alpine](../alpine/))
 
 ## Dockerfile
 
