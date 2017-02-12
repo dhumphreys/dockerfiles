@@ -1,14 +1,17 @@
 FROM alpine:3.5
 
-# install tini to reap child processes
-RUN apk add --no-cache netcat-openbsd tini
-
-# add check script to expose external TCP health checks
+# allow access to healthcheck port
 EXPOSE 8311
-COPY healthcheck-entrypoint.sh /usr/local/bin/
 
-# wrap all commands in tini and healthcheck executables
-ENTRYPOINT ["/sbin/tini", "--", "healthcheck-entrypoint.sh"]
+# install useful system tools for entrypoint
+RUN apk add --no-cache \
+  netcat-openbsd \
+  su-exec \
+  tini
 
-# run interactive shell by default
+# add entrypoint script for common options
+ENTRYPOINT ["/usr/local/sbin/alpine-entrypoint.sh"]
+COPY alpine-entrypoint.sh /usr/local/sbin/
+
+# run shell by default
 CMD ["sh"]
