@@ -27,7 +27,7 @@ docker run --rm -it dhumphreys88/alpine:3.5 [sh]
 
 ### Volumes
 
-- __/etc/tls/key.pem__: Mount TLS key/cert bundle for `stunnel` to use.
+- __/etc/tls/key.pem__: TLS key/cert bundle for `stunnel` (optional)
 
 ## Dockerfile
 
