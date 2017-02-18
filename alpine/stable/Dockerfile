@@ -1,4 +1,4 @@
-FROM alpine:3.5
+FROM alpine:3.4
 
 # run setup script to install necessary packages
 COPY alpine-setup.sh /usr/local/sbin/

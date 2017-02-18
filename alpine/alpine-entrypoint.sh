@@ -16,6 +16,12 @@ fi
 # configure TLS wrapper if key is present
 if [ -f /etc/tls/key.pem ] && [ -n "$TLS_ACCEPT" ]; then
 
+  # error if stunnel is not installed
+  if ! which stunnel ; then
+    echo "[STUNNEL] Fatal: command not found; please disable TLS wrapper"
+    exit 1
+  fi
+
   # error if TLS_CONNECT not set
   if [ -z "$TLS_CONNECT" ]; then
     echo "[STUNNEL] Fatal: TLS_CONNECT not set"
