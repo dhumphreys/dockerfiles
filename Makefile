@@ -44,9 +44,6 @@ build-elixir:
 	docker build -t $(DOCKERHUB_USER)/elixir:1.3 elixir
 	docker tag $(DOCKERHUB_USER)/elixir:1.3 $(DOCKERHUB_USER)/elixir:latest
 
-build-httpd:
-	docker build -t $(DOCKERHUB_USER)/httpd:latest httpd
-
 build-python:
 	docker build -t $(DOCKERHUB_USER)/python:2 python/2
 	docker build -t $(DOCKERHUB_USER)/python:3 python/3
@@ -79,9 +76,6 @@ push/%: %/Dockerfile
 push-elixir:
 	docker push $(DOCKERHUB_USER)/elixir:1.3
 	docker push $(DOCKERHUB_USER)/elixir:latest
-
-push-httpd:
-	docker push $(DOCKERHUB_USER)/httpd:latest
 
 push-python:
 	docker push $(DOCKERHUB_USER)/python:2
