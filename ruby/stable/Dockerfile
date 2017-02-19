@@ -1,4 +1,4 @@
-FROM dhumphreys88/alpine:latest
+FROM dhumphreys88/alpine:stable
 
 # run as non-root user
 ENV RUN_AS ruby

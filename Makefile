@@ -49,10 +49,6 @@ build-redis:
 	docker build -t $(DOCKERHUB_USER)/redis:3.2 redis
 	docker tag $(DOCKERHUB_USER)/redis:3.2 $(DOCKERHUB_USER)/redis:latest
 
-build-ruby:
-	docker build -t $(DOCKERHUB_USER)/ruby:2.3 ruby
-	docker tag $(DOCKERHUB_USER)/ruby:2.3 $(DOCKERHUB_USER)/ruby:latest
-
 build-vault:
 	docker build -t $(DOCKERHUB_USER)/vault:0.6 vault
 	docker tag $(DOCKERHUB_USER)/vault:0.6 $(DOCKERHUB_USER)/vault:latest
@@ -84,10 +80,6 @@ push-rabbitmq:
 push-redis:
 	docker push $(DOCKERHUB_USER)/redis:3.2
 	docker push $(DOCKERHUB_USER)/redis:latest
-
-push-ruby:
-	docker push $(DOCKERHUB_USER)/ruby:2.3
-	docker push $(DOCKERHUB_USER)/ruby:latest
 
 push-vault:
 	docker push $(DOCKERHUB_USER)/vault:0.6
