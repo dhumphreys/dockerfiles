@@ -17,6 +17,7 @@ make build-ruby
 - [x] alpine
 - [x] elixir
 - [x] http
+- [ ] openvpn
 - [x] python
 - [x] redis
 - [x] ruby
